@@ -11,7 +11,11 @@ echo -e "\e[35mExtracting frontend package\e[0m"
 cd /usr/share/nginx/html 
 unzip /tmp/frontend.zip
 
+echo -e "\e[35mCopying frontend config file to nginx\e[0m"
+cp configs/ignix-roboshop.conf /etc/nginx/default.d/roboshop.conf
+
 echo -e "\e[35mEnable Nginx\e[0m"
-systemctl enable nginx 
+systemctl enable nginx
+
 echo -e "\e[35mStart nginx\e[0m"
 systemctl start nginx
