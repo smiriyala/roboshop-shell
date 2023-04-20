@@ -17,4 +17,4 @@ cp configs/mongo.repo /etc/yum.repos.d/mongo.repo
 
 
 yum install mongodb-org-shell -y
-mongo --host mongodb.devopsforyou.online </app/schema/catalogue.js
+mongo --host mongodb-dev.devopsforyou.online </app/schema/catalogue.js
