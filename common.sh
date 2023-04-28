@@ -7,7 +7,7 @@ print_head(){
 }
 
 status_check(){
-    if [$1 -eq 0]; then
+    if [ $1 -eq 0 ]; then
         echo SUCCESS
     else
         echo FAILURE
@@ -46,13 +46,13 @@ app_prereq_setup(){
 
     print_head "create roboshop ${component}"
     id roboshop &>>${log_file}
-    if [$? -ne 0]; then
+    if [ $? -ne 0 ]; then
         useradd roboshop &>>${log_file}
     fi
     status_check $?
 
     print_head "create app directory"
-    if [! -d /app]; then
+    if [ ! -d /app ]; then
         mkdir /app &>>${log_file}
     fi
     status_check $?
