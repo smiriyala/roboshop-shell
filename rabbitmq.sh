@@ -1,6 +1,6 @@
 #wrapping password, rather than passing in code we need to pass as argument while execution
 if [ -z "${roboshop_app_password}" ];then
-    each -e "\e[31mMissing RabbitMQ user password argument\e[0m"
+    echo -e "\e[31mMissing RabbitMQ user password argument\e[0m"
     exit 1
 fi
 
