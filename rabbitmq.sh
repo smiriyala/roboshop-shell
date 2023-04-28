@@ -1,3 +1,6 @@
+source common.sh
+
+
 #wrapping password, rather than passing in code we need to pass as argument while execution
 roboshop_app_password=$1
 if [ -z "${roboshop_app_password}" ];then
