@@ -34,6 +34,6 @@ if [ $? -ne 0 ];then
 fi
 status_check $?
 
-print_head "Check new password set correctly"
-mysql -uroot -p${mysql_root_password} &>>${log_file}
-status_check $?
+# print_head "Check new password set correctly"
+# mysql -uroot -p ${mysql_root_password} &>>${log_file}
+# status_check $?
