@@ -1,4 +1,4 @@
-source common
+source common.sh
 
 
 print_head "Redis Repo download" 
