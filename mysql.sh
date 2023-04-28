@@ -2,7 +2,7 @@ source common.sh
 
 ##root password must be given whilest executing this service in mysql spot instnace.
 mysql_root_password=$1
-if[-z "${mysql_root_password}"]; then
+if [ -z "${mysql_root_password}" ]; then
     echo -e "\e[31mMissing Mysql root password argument-RoboShop@1\e[0m"
     exit 1
 fi
@@ -29,7 +29,7 @@ status_check $?
 
 print_head "change default password only when it doesnt set earlier"
 echo show database | mysql -uroot -p${mysql_root_password} &>>${log_file}
-if[$? -ne 0];then
+if [ $? -ne 0 ];then
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>${log_file}
 fi
 status_check $?

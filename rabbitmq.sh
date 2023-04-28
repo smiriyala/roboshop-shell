@@ -1,5 +1,5 @@
 #wrapping password, rather than passing in code we need to pass as argument while execution
-if [-z "${roboshop_app_password}"];then
+if [ -z "${roboshop_app_password}" ];then
     each -e "\e[31mMissing RabbitMQ user password argument\e[0m"
     exit 1
 fi
@@ -32,7 +32,7 @@ status_check $?
 print_head "default username / password as guest/guest Hence, we need to create one user for the application"
 #chekcing list of users exists in rabbitmq using rabbitmgctl list_users commond using sudo
 rabbitmqctl list_users | grep roboshop &>>${log_file}
-if[$? -ne 0];then
+if [ $? -ne 0 ];then
  rabbitmqctl add_user roboshop ${roboshop_app_password} &>>${log_file}
 fi
 status_check $?
